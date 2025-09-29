@@ -7,8 +7,6 @@ interface IconProps {
   height?: number | string;
   color?: string;
   fill?: string;
-  stroke?: string;
-  strokeWidth?: number | string;
   onClick?: () => void;
   style?: React.CSSProperties;
 }
@@ -20,8 +18,6 @@ export const Icon: React.FC<IconProps> = ({
   height = size || 547.777,
   color,
   fill = color || "currentColor",
-  stroke = "currentColor",
-  strokeWidth = 1,
   onClick,
   style,
   ...props

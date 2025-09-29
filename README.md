@@ -1,9 +1,46 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# SVG Component Generator
 
-## Getting Started
+A modern, professional tool for converting SVG files into React, Vue, and Svelte components with syntax highlighting and PNG export capabilities.
 
-First, run the development server:
+Built by [Antlers Labs](https://antlerslabs.com) - Crafting exceptional developer experiences.
 
+## ✨ Features
+
+- **Multi-Framework Support**: Generate components for React, Vue, and Svelte
+- **Dual Input Methods**: Upload SVG files or paste SVG code directly
+- **Syntax Highlighting**: Beautiful code display with Shiki-powered highlighting
+- **SVG Optimization**: Built-in SVG optimization and cleanup
+- **TypeScript Support**: Optional TypeScript interfaces and types
+- **Props Customization**: Configurable component props for styling
+- **PNG Export**: Convert SVG to PNG for download
+- **Modern UI**: Clean, minimal, corporate-grade interface
+- **Real-time Preview**: Instant preview of your SVG and generated code
+
+## 🚀 Getting Started
+
+### Prerequisites
+
+- Node.js 18+ 
+- npm, yarn, pnpm, or bun
+
+### Installation
+
+1. Clone the repository:
+```bash
+git clone https://github.com/antlerslabs/svg-react.git
+cd svg-react.git
+```
+
+2. Install dependencies:
+```bash
+npm install
+# or
+yarn install
+# or
+pnpm install
+```
+
+3. Run the development server:
 ```bash
 npm run dev
 # or
@@ -14,23 +51,62 @@ pnpm dev
 bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+4. Open [http://localhost:3000](http://localhost:3000) in your browser.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## 🛠️ Tech Stack
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- **Framework**: Next.js 15 with App Router
+- **Styling**: Tailwind CSS 4
+- **UI Components**: shadcn/ui + Kibo UI
+- **Syntax Highlighting**: Shiki
+- **Icons**: Lucide React + React Icons
+- **TypeScript**: Full type safety
+- **SVG Processing**: Custom optimization utilities
 
-## Learn More
+## 📖 Usage
 
-To learn more about Next.js, take a look at the following resources:
+1. **Upload or Paste**: Choose between uploading an SVG file or pasting SVG code
+2. **Configure**: Set your component name and select the target framework
+3. **Customize**: Choose generation options (optimization, TypeScript, props)
+4. **Generate**: Click generate to create your component
+5. **Copy & Use**: Copy the generated code and use it in your project
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## 🎨 Supported Frameworks
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+- **React**: TypeScript JSX components with props
+- **Vue**: Single File Components with TypeScript support
+- **Svelte**: Svelte components with TypeScript
 
-## Deploy on Vercel
+## 📁 Project Structure
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+```
+├── app/                    # Next.js app directory
+│   ├── page.tsx           # Main application page
+│   └── globals.css        # Global styles
+├── components/            # Reusable components
+│   └── ui/               # UI component library
+├── lib/                  # Utility functions
+│   ├── svg-utils.ts      # SVG processing utilities
+│   └── component-generators.ts # Component generation logic
+└── public/               # Static assets
+```
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## 🤝 Contributing
+
+We welcome contributions! Please see our [Contributing Guidelines](CONTRIBUTING.md) for details.
+
+## 📄 License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+## 🌐 Antlers Labs
+
+Built with ❤️ by [Antlers Labs](https://antlerslabs.com)
+
+- Website: [antlerslabs.com](https://antlerslabs.com)
+- Twitter: [@antlerslabs](https://twitter.com/antlerslabs)
+- GitHub: [@antlerslabs](https://github.com/antlerslabs)
+
+---
+
+*Crafting exceptional developer experiences, one tool at a time.*

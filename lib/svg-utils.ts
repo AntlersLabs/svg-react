@@ -39,7 +39,7 @@ export function parseSVG(svgContent: string): SVGData {
 export function optimizeSVG(svgContent: string): string {
   try {
     // Basic SVG optimization without external dependencies
-    let optimized = svgContent
+    const optimized = svgContent
       // Remove comments
       .replace(/<!--[\s\S]*?-->/g, '')
       // Remove unnecessary whitespace

@@ -82,7 +82,7 @@ export default ${name};`;
 }
 
 export function generateVueComponent(svgData: SVGData, options: ComponentOptions): string {
-  const { name, includeTypeScript = true, includeProps = true } = options;
+  const { includeTypeScript = true, includeProps = true } = options;
   
   if (includeTypeScript && includeProps) {
     return `<template>
@@ -150,7 +150,7 @@ withDefaults(defineProps(), {
 }
 
 export function generateSvelteComponent(svgData: SVGData, options: ComponentOptions): string {
-  const { name, includeTypeScript = true, includeProps = true } = options;
+  const { includeTypeScript = true, includeProps = true } = options;
   
   if (includeTypeScript && includeProps) {
     return `<script lang="ts">

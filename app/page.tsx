@@ -1,12 +1,12 @@
 "use client";
 
 import React, { useState, useRef } from "react";
+import Image from "next/image";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
-import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
-import { Upload, Download, Copy, Eye, Code, Settings, Zap, FileText, Clipboard } from "lucide-react";
+import { Upload, Download, Code, Settings, Zap, Clipboard } from "lucide-react";
 import { FaReact, FaVuejs } from "react-icons/fa";
 import { SiSvelte } from "react-icons/si";
 import { parseSVG, optimizeSVG, convertSVGToPNG, downloadFile } from "@/lib/svg-utils";
@@ -21,13 +21,7 @@ import {
   CodeBlockFiles,
   CodeBlockHeader,
   CodeBlockItem,
-  CodeBlockSelect,
-  CodeBlockSelectContent,
-  CodeBlockSelectItem,
-  CodeBlockSelectTrigger,
-  CodeBlockSelectValue,
 } from "@/components/ui/kibo-ui/code-block";
-import Icon from "@/components/ui/Icon";
 
 type Framework = "react" | "vue" | "svelte";
 type InputMethod = "upload" | "paste";
@@ -90,7 +84,7 @@ export default function Home() {
     }
   };
 
-  const handlePasteSvg = () => {
+  const handlePasteSvg = React.useCallback(() => {
     if (pastedSvg.trim()) {
       try {
         const optimizedContent = isOptimized ? optimizeSVG(pastedSvg) : pastedSvg;
@@ -103,7 +97,7 @@ export default function Home() {
         console.error("Error processing pasted SVG:", error);
       }
     }
-  };
+  }, [pastedSvg, isOptimized, componentName, framework]);
 
   // Auto-generate when pasted SVG changes
   React.useEffect(() => {
@@ -114,7 +108,7 @@ export default function Home() {
       
       return () => clearTimeout(timeoutId);
     }
-  }, [pastedSvg, inputMethod, isOptimized, componentName, framework, includeTypeScript, includeProps]);
+  }, [pastedSvg, inputMethod, handlePasteSvg]);
 
   const generateComponentCode = async (svg: string, name: string, framework: Framework) => {
     try {
@@ -384,10 +378,12 @@ export default function Home() {
                 {previewUrl ? (
                   <div className="space-y-4">
                     <div className="border rounded-lg p-4 bg-muted/20 flex items-center justify-center min-h-[200px]">
-                      <img
+                      <Image
                         src={previewUrl}
                         alt="SVG Preview"
-                        className="max-w-full max-h-48"
+                        width={200}
+                        height={200}
+                        className="max-w-full max-h-48 object-contain"
                       />
                     </div>
                     <div className="grid grid-cols-2 gap-2">
