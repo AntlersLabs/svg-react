@@ -174,7 +174,7 @@ export default function Home() {
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
           {/* Left Column - Configuration */}
-          <div className="space-y-6">
+          <div className="space-y-6 shadow-lg">
             {/* Upload and Configuration */}
             <Card className="border-0 shadow-sm">
               <CardHeader className="pb-4">
